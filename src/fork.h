@@ -23,13 +23,13 @@ __attribute__((unused)) static __inline__ void waitall(void) {
 __attribute__((unused)) static void fork_example(void) {
     pid_t pid = fork();
     if (pid == 0) {
-        printf("This is child process with pid = %d\n", pid);
+        printf("This is child process\n");
     } else {
         if (pid < 0) {
             perror("Fork error: ");
             return;
         }
-        printf("This is main process with pid = %d\n", pid);
+        printf("This is main process, created child process with pid = %d\n", pid);
         waitall();
     }
 }

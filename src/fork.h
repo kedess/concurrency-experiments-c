@@ -14,7 +14,7 @@ __attribute__((unused)) static __inline__ void waitall(void) {
                 // Дочерних потоков больше нет
                 break;
             }
-            perror("Wait error");
+            perror("Wait error: ");
             exit(EXIT_FAILURE);
         }
     }
@@ -26,7 +26,7 @@ __attribute__((unused)) static void fork_example(void) {
         printf("This is child process with pid = %d\n", pid);
     } else {
         if (pid < 0) {
-            perror("Fork error\n");
+            perror("Fork error: ");
             return;
         }
         printf("This is main process with pid = %d\n", pid);

@@ -2,8 +2,9 @@
 #include <stdlib.h>
 
 #include "fork.h"
+#include "thread.h"
 
 int main(void) {
-    fork_example();
+    create_thread();
     return EXIT_SUCCESS;
 }

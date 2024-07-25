@@ -22,7 +22,7 @@ __attribute__((unused)) static __inline__ void create_thread(void) {
         goto cleanup;
     }
     if ((err = pthread_join(tid, &vp)) != 0) {
-        fprintf(stderr, "Can't create thread %s", strerror(err));
+        fprintf(stderr, "Can't join thread %s", strerror(err));
         goto cleanup;
     }
     printf("Received value = %d\n", *(int*)vp);
